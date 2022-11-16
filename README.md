@@ -1,5 +1,8 @@
 # ESaaS-hangperson-sinatra-abhishek-thakur
 
+URL : [hangperson_app](https://lit-anchorage-70741.herokuapp.com/new)
+======================================================================
+
 Hangperson: a scaffolded (!) ESaaS assignment
 ==================================================
 
@@ -215,6 +218,11 @@ Install Heroku CLI following [instructions](https://devcenter.heroku.com/article
 Log in to your Heroku account by typing the command: `heroku login -i` in the terminal. This will connect you to your Heroku account.
 
 While in the root directory of your project (not your whole workspace), type `heroku create` to create a new project in Heroku. This will tell the Heroku service to prepare for some incoming code, and locally it will add a remote git repository for you called `heroku`.
+
+heroku has updated their stack specify it with the following:
+``sh
+heroku create --stack heroku-20
+``
 
 Next, make sure you stage and commit all changes locally as instructed above (i.e. `git add`, `git commit`, etc).
 
