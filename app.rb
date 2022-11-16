@@ -57,9 +57,9 @@ class WordGuesserApp < Sinatra::Base
   # wrong_guesses and word_with_guesses from @game.
   get '/show' do
     ### YOUR CODE HERE ###
-    if @game.word == '' # no word yet
-      redirect '/new' # go to new game
-    else # word exists
+    # if @game.word == '' # no word yet
+    #   redirect '/new' # go to new game
+    # else # word exists
       result = @game.check_win_or_lose # :win, :lose, :play
       if result == :win # win
         session[:state] = :win # set session state to win
