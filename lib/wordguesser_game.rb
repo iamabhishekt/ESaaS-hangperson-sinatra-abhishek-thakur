@@ -57,16 +57,16 @@ class WordGuesserGame
 
     if @word.include? letter
       @guesses += letter
-      return true
+      true
     else
       @wrong_guesses += letter
-      return true
+      true
     end
   end
 
   def word_with_guesses
     t=@guesses
-    return @word.gsub(/[^ #{t}]/, '-')
+    @word.gsub(/[^ #{t}]/, '-')
   end
 
   def check_win_or_lose
@@ -74,6 +74,6 @@ class WordGuesserGame
 
     return :win if (word_with_guesses == @word)
 
-    return :play
+    :play
   end
 end

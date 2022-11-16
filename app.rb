@@ -43,15 +43,17 @@ class WordGuesserApp < Sinatra::Base
     else
       letter = params[:guess].to_s[0] #get first letter
       ### YOUR CODE HERE ###
-      if @game.guesses.include? letter or @game.wrong_guesses.include? letter
-        flash[:message] = "You have already used that letter."
-      elsif letter == nil or letter == ""
+      begin
+        if @game.guesses.include? letter or @game.wrong_guesses.include? letter
+          flash[:message] = "You have already used that letter."
+        else
+          @game.guess letter
+        end
+      rescue ArgumentError
         flash[:message] = "Invalid guess."
-      else
-        @game.guess letter
       end
-    redirect '/show' # always redirect to /show
     end
+    redirect '/show' # always redirect to /show
   end
   
   # Everytime a guess is made, we should eventually end up at this route.
