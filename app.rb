@@ -69,7 +69,7 @@ class WordGuesserApp < Sinatra::Base
         redirect '/lose' # redirect to lose page
       else # play
         erb :show # You may change/remove this line
-      end
+      # end
     end
   end
   
