@@ -47,7 +47,6 @@ class WordGuesserApp < Sinatra::Base
       rescue ArgumentError # invalid guess
         flash[:message] = "Invalid guess."
       end
-    end
     redirect '/show' # always redirect to /show
   end
   
@@ -91,5 +90,4 @@ class WordGuesserApp < Sinatra::Base
       redirect '/show' # redirect to show page
     end
   end
-  
 end
